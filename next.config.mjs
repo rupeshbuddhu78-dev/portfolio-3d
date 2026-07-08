@@ -7,13 +7,15 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   images: {
-    domains: ['res.cloudinary.com', 'github.com', 'avatars.githubusercontent.com'],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**',
+        hostname: 'openweathermap.org',
       },
     ],
+  },
+  env: {
+    NEXT_PUBLIC_WEATHER_API_KEY: process.env.NEXT_PUBLIC_WEATHER_API_KEY,
   },
 };
 
